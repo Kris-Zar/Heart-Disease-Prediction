@@ -206,8 +206,8 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 👤 Author
 
 **Your Name**
-- GitHub: [@your-username](https://github.com/your-username)
-- LinkedIn: [your-linkedin](https://linkedin.com/in/your-linkedin)
+- GitHub: [@Parth-Saxena](https://github.com/Kris-Zar)
+- LinkedIn: [Parth-Saxena](https://linkedin.com/in/parth-saxena1)
 
 ---
 
