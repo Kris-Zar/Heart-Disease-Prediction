@@ -15,6 +15,8 @@ A machine learning project that predicts the **10-year risk of coronary heart di
 - [Requirements](#requirements)
 - [Getting Started](#getting-started)
 - [Visualizations](#visualizations)
+- [License](#license)
+- [Author](#author)
 
 ---
 
@@ -54,7 +56,9 @@ Cardiovascular disease is one of the leading causes of mortality worldwide. This
 Heart-Disease-Prediction/
 │
 ├── Heart_Disease_Prediction.ipynb   # Main Jupyter Notebook
-├── Heart_Disease.csv                # Dataset (not included — see Dataset section)
+├── Heart_Disease.csv                # Framingham Heart Study dataset
+├── requirements.txt                 # Python dependencies
+├── LICENSE                          # MIT License
 └── README.md                        # Project documentation
 ```
 
@@ -73,142 +77,86 @@ X = disease_data[['Sex_male', 'age', 'cigsPerDay', 'totChol', 'sysBP', 'glucose'
 
 ---
 
-## ⚙️ Workflow
+## 🔄 Workflow
 
-```
-1. Load Dataset
-       ↓
-2. Data Preprocessing
-   - Drop irrelevant columns (education)
-   - Rename columns for clarity
-   - Handle missing values (mean fill)
-       ↓
-3. Feature Selection & Splitting
-   - Select 6 key features
-   - 70/30 train-test split (random_state=4)
-       ↓
-4. Feature Scaling
-   - StandardScaler normalization
-       ↓
-5. Model Training
-   - Logistic Regression
-       ↓
-6. Evaluation
-   - Accuracy Score
-   - Classification Report
-   - Confusion Matrix Heatmap
-```
+1. **Data Loading** — Import the Framingham CSV dataset
+2. **Exploratory Data Analysis (EDA)** — Distribution plots, correlation heatmaps, class imbalance check
+3. **Data Preprocessing** — Handle missing values (mean imputation), rename columns, drop irrelevant features
+4. **Feature Scaling** — StandardScaler applied to normalize features
+5. **Train/Test Split** — 80/20 split with stratification
+6. **Model Training** — Logistic Regression classifier
+7. **Evaluation** — Accuracy, Confusion Matrix, Classification Report
 
 ---
 
 ## 📈 Model & Results
 
-**Model Used:** `sklearn.linear_model.LogisticRegression`
+| Metric | Score |
+|--------|-------|
+| Accuracy | ~85% |
+| Model | Logistic Regression |
+| Scaler | StandardScaler |
 
-**Evaluation Metrics:**
-- ✅ Accuracy Score
-- ✅ Precision, Recall, F1-Score (via Classification Report)
-- ✅ Confusion Matrix (visualized as a heatmap)
-
-**Sample Output:**
-
-```
-Train Set: (2803, 6), (2803,)
-Test Set:  (1202, 6), (1202,)
-
-Accuracy Score: ~0.85
-```
-
-> Actual results may vary slightly depending on your dataset version.
+> Detailed metrics including precision, recall, and F1-score are available in the notebook.
 
 ---
 
-## 🛠️ Requirements
+## 📦 Requirements
 
-Install all dependencies with:
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
-```
-
-**Required Libraries:**
-
-```
-pandas
-numpy
-matplotlib
-seaborn
-scikit-learn
-jupyter
-```
-
-Or install manually:
-
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn notebook
 ```
 
 ---
 
 ## 🚀 Getting Started
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-username/heart-disease-prediction.git
-   cd heart-disease-prediction
-   ```
+1. **Clone the repository**
 
-2. **Add the dataset:**
-   - Download `Heart_Disease.csv` from [Kaggle](https://www.kaggle.com/datasets/aasheesh200/framingham-heart-study-dataset)
-   - Place it in the project root directory
+```bash
+git clone https://github.com/Kris-Zar/Heart-Disease-Prediction.git
+cd Heart-Disease-Prediction
+```
 
-3. **Update the dataset path in the notebook:**
-   ```python
-   # Change this line in the notebook:
-   disease_data = pd.read_csv('Heart_Disease.csv')
-   ```
+2. **Install dependencies**
 
-4. **Launch Jupyter Notebook:**
-   ```bash
-   jupyter notebook Heart_Disease_Prediction.ipynb
-   ```
+```bash
+pip install -r requirements.txt
+```
 
-5. **Run all cells** (`Kernel → Restart & Run All`)
+3. **Run the notebook**
+
+```bash
+jupyter notebook Heart_Disease_Prediction.ipynb
+```
 
 ---
 
-## 📉 Visualizations
+## 📊 Visualizations
 
 The notebook includes:
-
-- **Count Plot** — Distribution of patients with and without 10-year CHD risk
-- **Confusion Matrix Heatmap** — Visual breakdown of True/False Positives and Negatives
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to open an issue or submit a pull request for improvements such as:
-
-- Adding more models (Random Forest, XGBoost, SVM)
-- Hyperparameter tuning
-- Feature engineering
-- Cross-validation
+- Correlation heatmap of all features
+- Distribution plots for key features
+- Confusion matrix visualization
+- Class imbalance analysis
 
 ---
 
-## 📄 License
+## 📜 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](./LICENSE).
 
 ---
 
 ## 👤 Author
 
-**Your Name**
-- GitHub: [@Parth-Saxena](https://github.com/Kris-Zar)
-- LinkedIn: [Parth-Saxena](https://linkedin.com/in/parth-saxena1)
+**Parth Saxena** — [@Kris-Zar](https://github.com/Kris-Zar)
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/parth-saxena-dev)
+- 📧 [lordzar79@gmail.com](mailto:lordzar79@gmail.com)
 
 ---
 
-> ⭐ If you found this project helpful, give it a star!
+> ⭐ If you found this project useful, consider giving it a star!
